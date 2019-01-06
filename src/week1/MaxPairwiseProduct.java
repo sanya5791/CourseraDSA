@@ -14,11 +14,13 @@ public class MaxPairwiseProduct {
         int n = numbers.length;
 
         for (int number : numbers) {
+            boolean isMax = false;
             if (number > max) {
+                isMax = true;
                 maxPrev = max;
                 max = number;
             }
-            if (number > maxPrev) {
+            if (number > maxPrev && !isMax) {
                 maxPrev = number;
             }
         }
